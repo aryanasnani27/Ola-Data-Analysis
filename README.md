@@ -77,8 +77,9 @@ Power BI dashboard includes:
 
 ```sql
 -- Total revenue by city
-SELECT city, SUM(fare_amount) AS total_revenue
-FROM bookings
-WHERE status = 'Completed'
-GROUP BY city
-ORDER BY total_revenue DESC;
+Create view  Avg_Cust_Ratings as
+Select Vehicle_Type, avg(Customer_Rating) as avg_customer_rating 
+from bookings
+group by Vehicle_Type;
+Select * from Avg_Cust_Ratings;
+
